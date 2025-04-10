@@ -1,7 +1,22 @@
-import React, { useState } from 'react'
+import React, { useState ,useEffect} from 'react'
 import Input from './Components/Input'
+import useCurrency from './hooks/currency';
+import currency from './hooks/currency';
 
 function App() {
+
+  const [amount, setAmount] = useState(1);
+const [fromCurrency, setFromCurrency] = useState('usd');
+const [toCurrency, setToCurrency] = useState('inr');
+const [convertedAmount, setConvertedAmount] = useState(0);
+useEffect(() => {
+  if (currencyData && currencyData[toCurrency]) {
+    const result = amount * currencyData[toCurrency];
+    setConvertedAmount(result.toFixed(2)); // rounded to 2 decimals
+  }
+}, [currencyData, toCurrency, amount]);
+
+
    
   return (
     <div className=' w-full h-screen bg-slate-500' >
