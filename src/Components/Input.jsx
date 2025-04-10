@@ -1,6 +1,4 @@
 import React, { useId } from 'react'
-import currency from '../hooks/currency'
-
 function Input( {
 label,  
   amountChange,
