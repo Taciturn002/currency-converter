@@ -1,8 +1,8 @@
-/** @type {import('tailwindcss').Config} */
+// tailwind.config.js
 export default {
   content: [
-    "./index.html",
-    "./src/**/*.{js,jsx,ts,tsx}",
+    "./index.html", // if it exists in root
+    "./src/**/*.{js,ts,jsx,tsx}"
   ],
   theme: {
     extend: {},
